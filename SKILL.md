@@ -1,14 +1,14 @@
 ---
 name: prd
 description: |
-  Create and plan product requirements, features, timelines, and releases with the PRD skill orchestrator. Use this skill whenever the user needs to write a PRD, plan a feature, estimate effort, assess risks, break down requirements, or create a roadmap — even if they don't explicitly ask for a "PRD." This skill will automatically route to the perfect sub-skill:
+  Create and plan product requirements, features, timelines, and releases with the PRD skill orchestrator. Use this skill whenever the user needs to write a PRD, plan a feature, estimate effort, assess risks, break down requirements, create a roadmap, or make strategic product decisions — **even if they don't explicitly ask for a "PRD" or "roadmap."** This skill automatically routes to specialized sub-skills:
   
-  - **prd-timeline-estimator**: When user mentions timeline, effort, estimate, how long, deadline, velocity, or capacity
-  - **prd-risk-assessor**: When user mentions risk, blocker, dependency, what could go wrong, mitigation, or contingency
-  - **prd-requirements-breaker**: When user mentions user stories, acceptance criteria, story points, scope, or breaking it down
-  - **prd-roadmap-planner**: When user mentions roadmap, release plan, quarterly plan, phases, or prioritization
+  - **prd-timeline-estimator**: When user mentions timeline, effort, estimate, how long, deadline, velocity, capacity, delivery schedule, or shipping date
+  - **prd-risk-assessor**: When user mentions risk, blocker, dependency, what could go wrong, mitigation, contingency, pre-mortem, or failure scenarios
+  - **prd-requirements-breaker**: When user mentions user stories, acceptance criteria, story points, scope, breaking it down, definition of done, or test cases
+  - **prd-roadmap-planner**: When user mentions roadmap, release plan, quarterly plan, phases, prioritization, phased rollout, go/no-go gates, or release strategy
   
-  **Always use this skill for**: Product planning, feature definition, requirements documentation, timeline estimation, risk assessment, user story creation, roadmap planning, project scoping, delivery planning, initiative planning, or any product management task. Use it even when the user doesn't explicitly ask for a PRD, roadmap, or stories — any work related to defining, planning, or delivering a product should trigger this skill.
+  **Always use this skill for**: Product planning, feature definition, requirements documentation, timeline estimation, risk assessment, user story creation, roadmap planning, release strategy, project scoping, phased delivery, business case development, strategic product decisions, stakeholder alignment, initiative planning, transforming vague ideas into concrete specs, or any product management task involving planning, defining, scoping, justifying, or delivering a product. Use it even when the user doesn't explicitly mention "PRD," "roadmap," or "stories" — any work related to defining, scoping, planning, or justifying a product should trigger this skill.
 license: MIT
 ---
 
