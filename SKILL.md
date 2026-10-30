@@ -26,7 +26,24 @@ Use this skill when:
 - Translating a vague idea into a concrete technical specification
 - Defining requirements for AI-powered features
 - Stakeholders need a unified "source of truth" for project scope
-- User asks to "write a PRD", "document requirements", or "plan a feature"
+- Planning timelines, estimating effort, or assessing risk
+- Breaking down features into user stories
+- Creating roadmaps or release plans
+- User asks to "write a PRD", "document requirements", "plan a feature", or any related product work
+
+---
+
+## How to Use This Skill
+
+1. **Describe Your Idea or Challenge**: Share what you're building, what's unclear, or what decision you need to make
+2. **Answer Discovery Questions**: This skill will ask clarifying questions to fill knowledge gaps
+3. **Choose Your Path**: The skill routes you to the best sub-skill based on your needs:
+   - Need a full PRD? → Main PRD skill
+   - Need timeline/effort estimates? → Timeline Estimator
+   - Need risk analysis? → Risk Assessor
+   - Need user stories? → Requirements Breaker
+   - Need a roadmap? → Roadmap Planner
+4. **Review and Iterate**: The skill provides structured output — ask for revisions, additional detail, or different approaches
 
 ---
 
@@ -91,9 +108,13 @@ Before writing a single line of the PRD, you **MUST** interrogate the user to fi
 
 **Ask about:**
 
-- **The Core Problem**: Why are we building this now?
-- **Success Metrics**: How do we know it worked?
-- **Constraints**: Budget, tech stack, or deadline?
+- **The Core Problem**: Why are we building this now? What pain point does it solve?
+- **Success Metrics**: How do we know it worked? What does success look like (adoption, revenue, performance)?
+- **Constraints**: Budget, timeline, tech stack, regulatory requirements, or platform limitations?
+- **Users & Personas**: Who is this for? Which user segments matter most?
+- **Competitive Context**: Why now? What's changing in the market or user behavior?
+- **Technical Unknowns**: Any new technologies, integrations, or complex dependencies?
+- **Phasing Strategy**: Is this MVP → v1.1 → v2.0, or something else?
 
 ### Phase 2: Analysis & Scoping
 
@@ -173,6 +194,31 @@ You **MUST** follow this exact structure for the output:
 
 - **Skip Discovery**: Never write a PRD without asking at least 2 clarifying questions first.
 - **Hallucinate Constraints**: If the user didn't specify a tech stack, ask or label it as `TBD`.
+- **Vague Success Criteria**: "Good user experience" is not a success criterion. Use measurable metrics (adoption %, performance thresholds, error rates).
+- **Ignore Non-Goals**: Define what you're NOT building to protect scope and timeline.
+
+---
+
+## Testing & Validation Strategy
+
+A strong PRD includes a plan for validating that the feature works as intended:
+
+**For Product/Feature Work**:
+- Define acceptance criteria tests (manual QA checklist)
+- Specify metrics to track post-launch (adoption, engagement, retention)
+- Plan A/B testing if applicable (phased rollout, percentage-based)
+
+**For AI/ML Features**:
+- Benchmark against human performance or baseline
+- Define evaluation metrics (accuracy, precision, recall, latency)
+- Plan for adversarial testing (edge cases, bad inputs)
+- Set up monitoring for drift or degradation
+
+**Include in Your PRD**:
+- How success will be measured
+- Who owns validation (QA, data team, PM)
+- Timeline for validation gates (before full launch)
+- Rollback criteria (when to pause or cancel launch)
 
 ---
 
@@ -180,28 +226,70 @@ You **MUST** follow this exact structure for the output:
 
 ### 1. Executive Summary
 
-**Problem**: Users struggle to find specific documentation snippets in massive repositories.
-**Solution**: An intelligent search system that provides direct answers with source citations.
-**Success**:
+**Problem**: Developers spend 20-30 minutes daily searching through documentation to find code examples and configuration patterns. Manual keyword searches often surface irrelevant results.
 
-- Reduce search time by 50%.
-- Citation accuracy >= 95%.
+**Solution**: An intelligent search system powered by semantic understanding that provides direct answers with source citations and code examples.
 
-### 2. User Stories
+**Success Criteria**:
+- Reduce average search time from 25 minutes to 10 minutes
+- Citation accuracy >= 95% (correct source for recommended code)
+- User adoption: 60% of developers actively using within 3 months
+- Feature adoption: 40% of searches include follow-up questions
 
-- **Story**: As a developer, I want to ask natural language questions so I don't have to guess keywords.
-- **AC**:
-  - Supports multi-turn clarification.
-  - Returns code blocks with "Copy" button.
+### 2. User Experience & Functionality
 
-### 3. AI System Architecture
+**User Personas**:
+- Backend engineers building APIs
+- Frontend developers implementing UI patterns
+- DevOps engineers configuring infrastructure
 
-- **Tools Required**: `codesearch`, `grep`, `webfetch`.
+**User Stories**:
+- As a developer, I want to ask natural language questions instead of guessing keywords, so I find answers faster
+- As a developer, I want multi-turn clarification so I can refine my search if the first answer doesn't match my use case
+- As a developer, I want direct code examples with a "Copy" button, so I can quickly apply solutions
 
-### 4. Evaluation
+**Acceptance Criteria**:
+- Search supports natural language queries (multi-word sentences)
+- System provides up to 3 relevant results per query
+- Each result includes source file path and line numbers
+- Code blocks have copy-to-clipboard functionality
+- Follow-up questions are supported (e.g., "Make it work with TypeScript")
 
-- **Benchmark**: Test with 50 common developer questions.
-- **Pass Rate**: 90% must match expected citations.
+**Non-Goals**:
+- Real-time updates to documentation (searches against current snapshot)
+- AI-generated code (only returns existing documentation)
+- Custom syntax highlighting for languages beyond top 10 (generic highlighting)
 
-_This page brought to you by the 🦄 Magic Automation Unicorns of LightSpeedWP._
-[Automation Docs](https://github.com/lightspeedwp/.github/tree/main/instructions)
+### 3. Technical Specifications
+
+**Architecture**: Vector embeddings of documentation → semantic similarity search → ranking by relevance
+
+**Integration Points**:
+- Code repository API (GitHub, GitLab)
+- Vector database for embeddings
+- Authentication via OAuth for repository access
+
+**Evaluation Strategy**:
+- Benchmark: Test with 50 real developer questions from support channel
+- Success metric: 90% of results match developer's expected answer or better
+- Weekly ranking evaluation using developer feedback (thumbs up/down)
+
+### 4. Phased Rollout
+
+**Phase 1 (MVP)**: Basic semantic search over documentation
+- Timeline: 6 weeks
+- Team: 2 engineers, 1 product lead
+
+**Phase 2 (v1.1)**: Multi-turn conversation and ranking improvements
+- Timeline: 4 weeks
+- Dependent on: Phase 1 user feedback
+
+**Phase 3 (v2.0)**: Advanced features (personalized rankings, team-specific documentation)
+- Timeline: 8 weeks
+- Dependent on: Phase 2 adoption metrics
+
+### 5. Key Risks
+
+- **Latency**: Vector search could be slow for large code bases (Mitigation: pre-compute embeddings, use indexes)
+- **Hallucination**: AI might suggest code that doesn't exist in docs (Mitigation: strict retrieval-based approach, validate sources)
+- **Adoption**: Developers might default to old search habits (Mitigation: prominent UI placement, in-app education)
