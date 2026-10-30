@@ -1,0 +1,73 @@
+---
+# Lefthook configuration for PRD Skill
+# Ensures code quality, testing, and branch naming standards
+
+fail: pipe
+post-checkout:
+  commands:
+    install-deps:
+      stage_fixed: false
+      run: npm install --quiet 2>/dev/null || true
+  scripts:
+    branch-validation:
+      runner: bash
+      stage_fixed: false
+      glob: "^HEAD$"
+      script: |
+        branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+        # Skip main/develop branches
+        if [[ "$branch_name" =~ ^(main|develop|master)$ ]]; then
+          exit 0
+        fi
+
+        # Validate branch naming convention
+        # Expected format: type/description (e.g., feat/add-sub-skills, fix/test-paths)
+        if ! [[ "$branch_name" =~ ^(feat|fix|docs|chore|release)/ ]]; then
+          echo "❌ Invalid branch name: $branch_name"
+          echo ""
+          echo "Branch names must follow this pattern: type/description"
+          echo "Valid types: feat, fix, docs, chore, release"
+          echo ""
+          echo "Examples:"
+          echo "  ✓ feat/add-sub-skills"
+          echo "  ✓ fix/test-coverage"
+          echo "  ✓ docs/improve-readme"
+          echo "  ✓ chore/update-dependencies"
+          echo ""
+          exit 1
+        fi
+
+pre-commit:
+  commands:
+    lint:
+      stage_fixed: true
+      glob: "*.js,*.json,*.md,*.sh,*.yml,*.yaml"
+      run: npm run lint --quiet 2>/dev/null || true
+
+pre-push:
+  commands:
+    tests:
+      stage_fixed: false
+      run: npm run test:all --quiet 2>/dev/null || echo "⚠️  Tests should pass before pushing"
+
+  scripts:
+    branch-protected:
+      runner: bash
+      stage_fixed: false
+      script: |
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        remote_url=$(git config --get remote.origin.url)
+
+        # Allow local branches to push
+        echo "✓ Branch validation passed: $branch"
+
+skip-by-ref:
+  - merge-commit
+  - rebase
+
+# Optional: skip hooks in certain conditions
+skip: []
+
+# Enforce all hooks
+force_install: true

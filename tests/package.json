@@ -1,0 +1,27 @@
+{
+  "name": "prd-skill",
+  "version": "2.0.1",
+  "description": "PRD Skill - Product Requirements Document generator with comprehensive testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:verbose": "jest --verbose --coverage",
+    "test:bats": "bats ../tests/scripts.bats",
+    "test:bats:verbose": "bats --verbose ../tests/scripts.bats",
+    "test:all": "npm test && npm run test:bats"
+  },
+  "keywords": [
+    "prd",
+    "skill",
+    "product-requirements",
+    "planning",
+    "jest",
+    "bats"
+  ],
+  "author": "LightSpeed Community",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

@@ -1,0 +1,7 @@
+# Pull Request Template Routing
+# Maps branch type prefixes to appropriate PR templates
+
+blank: false
+use_commit_body: false
+
+blank_issues_enabled: false
