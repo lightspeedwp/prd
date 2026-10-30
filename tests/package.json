@@ -1,0 +1,14 @@
+{
+  "name": "prd-skill-tests",
+  "version": "1.0.0",
+  "description": "Tests for the PRD skill",
+  "scripts": {
+    "test": "mocha test-prd-skill.js"
+  },
+  "keywords": ["prd", "tests", "skill"],
+  "author": "LightSpeed",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}
