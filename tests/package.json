@@ -1,14 +1,24 @@
 {
   "name": "prd-skill-tests",
-  "version": "1.0.0",
-  "description": "Tests for the PRD skill",
+  "version": "2.0.1",
+  "description": "Tests for the PRD skill - Product Requirements Document generator",
   "scripts": {
-    "test": "mocha test-prd-skill.js"
+    "test": "jest --coverage --forceExit",
+    "test:watch": "jest --watch",
+    "test:verbose": "jest --verbose --coverage",
+    "test:coverage": "jest --coverage --collectCoverageFrom='../**/*.js' --collectCoverageFrom='../**/*.sh'",
+    "test:ci": "jest --coverage --ci --reporters=default --reporters=jest-junit"
   },
-  "keywords": ["prd", "tests", "skill"],
+  "keywords": [
+    "prd",
+    "tests",
+    "skill",
+    "jest",
+    "coverage"
+  ],
   "author": "LightSpeed",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^10.0.0"
+    "jest": "^29.7.0"
   }
 }
