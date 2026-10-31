@@ -2,15 +2,17 @@
 
 A comprehensive Claude Code skill for creating production-grade Product Requirements Documents (PRDs), feature plans, technical specifications, and product roadmaps.
 
-## Overview
+This skill consolidates years of product planning expertise into a unified tool that intelligently routes to specialized sub-skills based on your needs.
 
-The PRD Skill consolidates years of product planning expertise into a unified tool that guides you through:
+## What This Skill Does
 
-- **PRD Creation**: Executive summaries, requirements, acceptance criteria
-- **Feature Planning**: Breakdown, prioritization, user story generation  
-- **Timeline & Roadmap**: Release planning, milestones, sprint coordination
-- **Risk Assessment**: Technical risks, dependencies, blocker identification
-- **Stakeholder Alignment**: Requirements gathering, approval workflows
+**Main Capabilities:**
+- ✅ Write comprehensive Product Requirements Documents (PRDs)
+- ✅ Estimate timelines and effort with three-scenario planning
+- ✅ Assess and mitigate project risks
+- ✅ Break requirements into user stories with acceptance criteria
+- ✅ Create product roadmaps and release plans
+- ✅ Align stakeholders and define success criteria
 
 ## Quick Start
 
@@ -63,12 +65,18 @@ When building AI systems:
 - Privacy and compliance considerations
 - Integration patterns and fallback strategies
 
-## Documentation
+## Get Started
 
-- **[SPEC.md](docs/SPEC.md)** - Detailed specification of PRD structure and standards
-- **[PLAN.md](docs/PLAN.md)** - Implementation and consolidation plan
-- **[QUICKSTART.md](docs/QUICKSTART.md)** - Quick reference guide
-- **[AGENT.md](docs/AGENT.md)** - Agent capabilities and integration
+### First Time Here?
+1. Start with [**Quick Start**](docs/QUICKSTART.md) — 5 minutes to your first PRD
+2. Check out [**SKILL.md**](SKILL.md) — The complete skill definition with discovery workflow
+3. Explore [**Sub-Skill Routing**](#sub-skills-reference) below to understand automated routing
+
+### Need Help?
+- **[Detailed Spec](docs/SPEC.md)** — PRD structure, quality standards, and schema
+- **[Implementation Plan](docs/PLAN.md)** — How this skill was built
+- **[Agent Guide](docs/AGENT.md)** — For advanced agent configuration
+- **[Configuration](CLAUDE.md)** — Setup and environment options
 
 ## Examples
 
@@ -96,30 +104,48 @@ Claude:
 4. Plans phased rollout with fallback strategies
 ```
 
-## Files & Structure
+## Sub-Skills Reference
+
+This skill automatically routes to specialized sub-skills based on your request:
+
+| Sub-Skill | When to Use | Key Features |
+|-----------|-------------|--------------|
+| **Timeline Estimator** | "How long will this take?", "Estimate effort", "Timeline" | 3-scenario planning, critical path, contingency buffers |
+| **Risk Assessor** | "What could go wrong?", "Risk assessment", "Pre-mortem" | Likelihood × Impact scoring, mitigation strategies |
+| **Requirements Breaker** | "User stories", "Acceptance criteria", "Break it down" | Story cards, definition of done, test cases |
+| **Roadmap Planner** | "Create a roadmap", "Release plan", "Quarterly planning" | Phased delivery, milestones, go/no-go gates |
+
+👉 **Don't explicitly choose a sub-skill** — just describe what you need, and the skill routes automatically.
+
+## File Structure
 
 ```
 ~/.claude/skills/prd/
-├── SKILL.md                  # Main skill definition
-├── README.md                # This file
-├── AGENTS.md                # Agent documentation
-├── CLAUDE.md                # Claude Code configuration
-├── CHANGELOG.md             # Version history
-├── LICENSE                  # MIT license
-├── jest.config.js           # Jest test configuration
-├── docs/
-│   ├── SPEC.md             # Detailed PRD specification
-│   ├── PLAN.md             # Implementation plan
-│   ├── QUICKSTART.md       # Quick reference guide
-│   ├── AGENT.md            # Agent capabilities
-│   └── README-AGENT.md     # Additional reference
-├── scripts/
-│   └── prd-generator.sh    # Skill management script
-├── tests/
-│   ├── test-prd-skill.js   # Comprehensive test suite (100% coverage)
-│   ├── package.json        # Jest and test dependencies
-│   └── jest.config.js      # Jest configuration
-└── sub-skills/             # Directory for future sub-skills
+├── 📄 Root Documentation
+│   ├── SKILL.md              # Main skill definition & workflow
+│   ├── README.md             # This file
+│   ├── AGENTS.md             # Agent capabilities
+│   ├── CLAUDE.md             # Configuration & setup
+│   └── CHANGELOG.md          # Release notes
+├── 📚 docs/
+│   ├── README.md             # Documentation index
+│   ├── SPEC.md               # PRD structure & standards
+│   ├── QUICKSTART.md         # 5-minute guide
+│   ├── PLAN.md               # Implementation details
+│   ├── AGENT.md              # Agent configuration
+│   └── README-AGENT.md       # Agent reference
+├── 🧪 tests/
+│   ├── prd-skill.test.js     # 100% test coverage
+│   ├── package.json          # Jest configuration
+│   └── jest.config.js        # Test setup
+├── 🛠️ scripts/
+│   ├── prd-generator.sh      # Skill verification
+│   └── prompts/              # Example prompts
+└── 🎯 sub-skills/            # Specialized sub-skills
+    ├── prd-timeline-estimator/
+    ├── prd-risk-assessor/
+    ├── prd-requirements-breaker/
+    └── prd-roadmap-planner/
 ```
 
 ## When to Use
@@ -204,23 +230,45 @@ This skill is designed to work in **any context**:
 - ✅ Reusable in multiple organizations
 - ✅ Independent test suite with 100% coverage
 
-## Support
+## Troubleshooting & Support
 
-For issues, questions, or contributions:
+**Setup Issues?**
+→ See [CLAUDE.md](CLAUDE.md) for configuration and environment setup
 
-- Check [CLAUDE.md](CLAUDE.md) for configuration help
-- Review [SPEC.md](docs/SPEC.md) for detailed standards
-- See [QUICKSTART.md](docs/QUICKSTART.md) for common scenarios
-- Read [AGENT.md](docs/AGENT.md) for advanced capabilities
-- Run tests: `cd tests && npm test`
+**Want to Customize?**
+→ Review [SPEC.md](docs/SPEC.md) for PRD structure and quality standards
+
+**Need Examples?**
+→ Check [QUICKSTART.md](docs/QUICKSTART.md) for real-world scenarios
+
+**Advanced Usage?**
+→ Read [AGENT.md](docs/AGENT.md) for agent configuration and integration
+
+**Verify Installation:**
+```bash
+cd ~/.claude/skills/prd
+./scripts/prd-generator.sh
+npm test  # Run full test suite (100% coverage)
+```
+
+## Contributing
+
+This skill follows [LightSpeed WP standards](https://github.com/lightspeedwp/.github):
+- **Branching**: feat/, fix/, docs/, chore/, release/ prefixes
+- **Labeling**: Aligned with org-wide labels.yml
+- **Testing**: 100% test coverage required
+- **Documentation**: All features documented in docs/
 
 ## License
 
-MIT - See LICENSE file in parent repository
+MIT License — See LICENSE file
 
 ## Version
 
-v2.0.1 (Consolidated from prd-agent + prd-factory-planner-agent)
+**v2.0.1** - Production-ready  
+Consolidated from: prd-agent + prd-factory-planner-agent  
+Maintained by: LightSpeed Community  
+Repository: [lightspeedwp/prd](https://github.com/lightspeedwp/prd)
 
 ---
 
