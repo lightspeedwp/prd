@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "description": "Skills and agents for PRD Skill development and use",
+  "skills": [
+    {
+      "name": "prd",
+      "path": "../SKILL.md",
+      "description": "Main PRD skill orchestrator for product planning and requirements"
+    },
+    {
+      "name": "prd-timeline-estimator",
+      "path": "../sub-skills/prd-timeline-estimator/SKILL.md",
+      "description": "Timeline and effort estimation with three-scenario planning"
+    },
+    {
+      "name": "prd-risk-assessor",
+      "path": "../sub-skills/prd-risk-assessor/SKILL.md",
+      "description": "Risk assessment and mitigation strategy planning"
+    },
+    {
+      "name": "prd-requirements-breaker",
+      "path": "../sub-skills/prd-requirements-breaker/SKILL.md",
+      "description": "Breaking down requirements into user stories and acceptance criteria"
+    },
+    {
+      "name": "prd-roadmap-planner",
+      "path": "../sub-skills/prd-roadmap-planner/SKILL.md",
+      "description": "Product roadmap and release planning"
+    }
+  ],
+  "agents": [],
+  "prompts": [
+    {
+      "name": "feature-prd",
+      "path": "../prompts/breakdown-feature-prd.md",
+      "description": "Quick prompts for feature PRD breakdown"
+    }
+  ]
+}

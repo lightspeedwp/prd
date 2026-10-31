@@ -1,0 +1,9 @@
+{
+  "$schema": "https://github.com/anthropics/claude-code/releases/download/v0.8.2/settings-schema.json",
+  "version": "1.0",
+  "description": "Claude Code configuration for PRD skill development",
+  "project_name": "PRD Skill - Product Requirements Document Generator",
+  "auto_archive": true,
+  "notifications": "focus",
+  "keep_awake": false
+}
