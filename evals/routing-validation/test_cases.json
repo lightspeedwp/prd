@@ -1,0 +1,279 @@
+{
+  "test_suite": "Sub-Skill Routing Validation for ls-prd",
+  "total_cases": 38,
+  "categories": {
+    "timeline_estimator": 8,
+    "risk_assessor": 8,
+    "requirements_breaker": 8,
+    "roadmap_planner": 8,
+    "routing_conflicts": 6
+  },
+  "test_cases": [
+    {
+      "id": "timeline-01",
+      "category": "timeline_estimator",
+      "prompt": "How long will it take to build a new payment processing feature? We need to estimate effort, account for dependencies, and identify the critical path.",
+      "should_trigger": "prd-timeline-estimator",
+      "reason": "Direct timeline estimation request"
+    },
+    {
+      "id": "timeline-02",
+      "category": "timeline_estimator",
+      "prompt": "I need to create a Q2 delivery plan for three major initiatives. Can you help me estimate effort and identify bottlenecks?",
+      "should_trigger": "prd-timeline-estimator",
+      "reason": "Effort estimation and capacity planning"
+    },
+    {
+      "id": "timeline-03",
+      "category": "timeline_estimator",
+      "prompt": "What's our velocity been like this quarter? How should we factor that into our next sprint?",
+      "should_trigger": "prd-timeline-estimator",
+      "reason": "Velocity and capacity analysis"
+    },
+    {
+      "id": "timeline-04",
+      "category": "timeline_estimator",
+      "prompt": "Can we realistically ship this feature by end of quarter? What's our critical path?",
+      "should_trigger": "prd-timeline-estimator",
+      "reason": "Deadline feasibility and critical path analysis"
+    },
+    {
+      "id": "timeline-05",
+      "category": "timeline_estimator",
+      "prompt": "Schedule a team meeting for next Thursday at 2pm",
+      "should_trigger": null,
+      "reason": "Calendar scheduling - should NOT route (off-topic)"
+    },
+    {
+      "id": "timeline-06",
+      "category": "timeline_estimator",
+      "prompt": "How do we allocate team resources across three concurrent projects? We need to understand capacity constraints.",
+      "should_trigger": "prd-timeline-estimator",
+      "reason": "Resource allocation and capacity planning"
+    },
+    {
+      "id": "timeline-07",
+      "category": "timeline_estimator",
+      "prompt": "What should our sprint velocity target be for next quarter based on team size?",
+      "should_trigger": "prd-timeline-estimator",
+      "reason": "Velocity planning"
+    },
+    {
+      "id": "timeline-08",
+      "category": "timeline_estimator",
+      "prompt": "Help us create a phased delivery plan with realistic milestones and contingencies",
+      "should_trigger": "prd-timeline-estimator",
+      "reason": "Timeline estimation with contingency buffers"
+    },
+    {
+      "id": "risk-01",
+      "category": "risk_assessor",
+      "prompt": "What could go wrong with launching this feature to all users at once? I want to identify potential failure points.",
+      "should_trigger": "prd-risk-assessor",
+      "reason": "Direct risk and failure scenario request"
+    },
+    {
+      "id": "risk-02",
+      "category": "risk_assessor",
+      "prompt": "Let's do a pre-mortem on this project. Assume it failed - what would be the top reasons why?",
+      "should_trigger": "prd-risk-assessor",
+      "reason": "Pre-mortem analysis"
+    },
+    {
+      "id": "risk-03",
+      "category": "risk_assessor",
+      "prompt": "Our payment integration depends on three external APIs. What are the risk factors we should plan for?",
+      "should_trigger": "prd-risk-assessor",
+      "reason": "Dependency risk assessment"
+    },
+    {
+      "id": "risk-04",
+      "category": "risk_assessor",
+      "prompt": "How do we mitigate the risk of database migration failing? What contingency plans should we have?",
+      "should_trigger": "prd-risk-assessor",
+      "reason": "Risk mitigation and contingency planning"
+    },
+    {
+      "id": "risk-05",
+      "category": "risk_assessor",
+      "prompt": "Schedule a risk assessment meeting with stakeholders",
+      "should_trigger": null,
+      "reason": "Calendar scheduling - should NOT route (off-topic)"
+    },
+    {
+      "id": "risk-06",
+      "category": "risk_assessor",
+      "prompt": "What are the blockers that could delay this launch? How likely is each one?",
+      "should_trigger": "prd-risk-assessor",
+      "reason": "Blocker identification and likelihood assessment"
+    },
+    {
+      "id": "risk-07",
+      "category": "risk_assessor",
+      "prompt": "Our team is unfamiliar with this technology stack. What risks does that introduce?",
+      "should_trigger": "prd-risk-assessor",
+      "reason": "Technical risk assessment"
+    },
+    {
+      "id": "risk-08",
+      "category": "risk_assessor",
+      "prompt": "Identify potential compliance issues and regulatory risks for this feature",
+      "should_trigger": "prd-risk-assessor",
+      "reason": "Compliance and regulatory risk assessment"
+    },
+    {
+      "id": "req-01",
+      "category": "requirements_breaker",
+      "prompt": "Break this feature down into user stories. For each story, write acceptance criteria.",
+      "should_trigger": "prd-requirements-breaker",
+      "reason": "Direct user story and acceptance criteria request"
+    },
+    {
+      "id": "req-02",
+      "category": "requirements_breaker",
+      "prompt": "What's our definition of done for this feature? What test cases do we need?",
+      "should_trigger": "prd-requirements-breaker",
+      "reason": "Test case and DoD specification"
+    },
+    {
+      "id": "req-03",
+      "category": "requirements_breaker",
+      "prompt": "Estimate story points and scope for these requirements",
+      "should_trigger": "prd-requirements-breaker",
+      "reason": "Scope and story point estimation"
+    },
+    {
+      "id": "req-04",
+      "category": "requirements_breaker",
+      "prompt": "Map out the user journey for this feature and identify edge cases",
+      "should_trigger": "prd-requirements-breaker",
+      "reason": "User journey and edge case identification"
+    },
+    {
+      "id": "req-05",
+      "category": "requirements_breaker",
+      "prompt": "Please create user story cards and add them to our backlog",
+      "should_trigger": "prd-requirements-breaker",
+      "reason": "User story creation"
+    },
+    {
+      "id": "req-06",
+      "category": "requirements_breaker",
+      "prompt": "Schedule a backlog refinement session",
+      "should_trigger": null,
+      "reason": "Calendar scheduling - should NOT route (off-topic)"
+    },
+    {
+      "id": "req-07",
+      "category": "requirements_breaker",
+      "prompt": "What are the acceptance criteria for each user persona interacting with this feature?",
+      "should_trigger": "prd-requirements-breaker",
+      "reason": "Persona-based acceptance criteria"
+    },
+    {
+      "id": "req-08",
+      "category": "requirements_breaker",
+      "prompt": "Break down this vague requirement into specific, testable stories",
+      "should_trigger": "prd-requirements-breaker",
+      "reason": "Requirement breakdown into testable stories"
+    },
+    {
+      "id": "roadmap-01",
+      "category": "roadmap_planner",
+      "prompt": "Create a quarterly roadmap for our product. What features should we prioritize in Q2, Q3, and Q4?",
+      "should_trigger": "prd-roadmap-planner",
+      "reason": "Direct roadmap planning request"
+    },
+    {
+      "id": "roadmap-02",
+      "category": "roadmap_planner",
+      "prompt": "How should we phase this feature rollout? Should we do canary, phased, or big bang launch?",
+      "should_trigger": "prd-roadmap-planner",
+      "reason": "Release strategy and phased rollout planning"
+    },
+    {
+      "id": "roadmap-03",
+      "category": "roadmap_planner",
+      "prompt": "Prioritize these five initiatives across our roadmap. What's the business case for each?",
+      "should_trigger": "prd-roadmap-planner",
+      "reason": "Initiative prioritization and roadmap sequencing"
+    },
+    {
+      "id": "roadmap-04",
+      "category": "roadmap_planner",
+      "prompt": "What are our go/no-go criteria for this release? When should we cancel or pause?",
+      "should_trigger": "prd-roadmap-planner",
+      "reason": "Go/no-go gate and release strategy"
+    },
+    {
+      "id": "roadmap-05",
+      "category": "roadmap_planner",
+      "prompt": "Build a 12-month product roadmap with major milestones",
+      "should_trigger": "prd-roadmap-planner",
+      "reason": "Long-term roadmap planning"
+    },
+    {
+      "id": "roadmap-06",
+      "category": "roadmap_planner",
+      "prompt": "Design a progressive rollout strategy for our new payment system",
+      "should_trigger": "prd-roadmap-planner",
+      "reason": "Phased rollout and release strategy"
+    },
+    {
+      "id": "roadmap-07",
+      "category": "roadmap_planner",
+      "prompt": "Schedule our quarterly planning meeting",
+      "should_trigger": null,
+      "reason": "Calendar scheduling - should NOT route (off-topic)"
+    },
+    {
+      "id": "roadmap-08",
+      "category": "roadmap_planner",
+      "prompt": "How do we balance technical debt vs new features on the roadmap?",
+      "should_trigger": "prd-roadmap-planner",
+      "reason": "Roadmap prioritization strategy"
+    },
+    {
+      "id": "conflict-01",
+      "category": "routing_conflicts",
+      "prompt": "Estimate the timeline for this feature AND identify all the risks we should watch for",
+      "should_trigger": "prd",
+      "reason": "Multi-domain request (timeline + risk) - should route to main skill"
+    },
+    {
+      "id": "conflict-02",
+      "category": "routing_conflicts",
+      "prompt": "Break requirements into user stories, estimate effort, and plan our phased launch",
+      "should_trigger": "prd",
+      "reason": "Multi-domain request (requirements + timeline + roadmap) - should route to main skill"
+    },
+    {
+      "id": "conflict-03",
+      "category": "routing_conflicts",
+      "prompt": "Create a roadmap, identify risks for each phase, and estimate delivery dates",
+      "should_trigger": "prd",
+      "reason": "Multi-domain request (roadmap + risk + timeline) - should route to main skill"
+    },
+    {
+      "id": "conflict-04",
+      "category": "routing_conflicts",
+      "prompt": "What user stories should we prioritize on the roadmap?",
+      "should_trigger": "prd-roadmap-planner",
+      "reason": "Primary intent is roadmap planning; requirements is secondary"
+    },
+    {
+      "id": "conflict-05",
+      "category": "routing_conflicts",
+      "prompt": "How long will these user stories take to build?",
+      "should_trigger": "prd-timeline-estimator",
+      "reason": "Primary intent is timeline estimation; requirements context is background"
+    },
+    {
+      "id": "conflict-06",
+      "category": "routing_conflicts",
+      "prompt": "What could go wrong with our phased rollout plan?",
+      "should_trigger": "prd-risk-assessor",
+      "reason": "Primary intent is risk assessment; roadmap context is background"
+    }
+  ]
+}
