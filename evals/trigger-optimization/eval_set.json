@@ -1,0 +1,102 @@
+[
+  {
+    "query": "We're launching a new payment feature next quarter and I need to document what we're building, who it's for, and the success metrics. Where should I start?",
+    "should_trigger": true,
+    "reason": "Clear PRD request with product planning scope"
+  },
+  {
+    "query": "I have this idea for an AI-powered content assistant but it's pretty vague right now. Can you help me turn it into something concrete that the eng team can actually build?",
+    "should_trigger": true,
+    "reason": "Feature definition and requirements without explicitly asking for PRD"
+  },
+  {
+    "query": "Our team is kicking off Q2 planning. We need to prioritize between three big initiatives, estimate how long each would take, and figure out the sequencing. How do we approach this?",
+    "should_trigger": true,
+    "reason": "Roadmap planning, prioritization, and timeline estimation"
+  },
+  {
+    "query": "What could go wrong with launching this feature in beta to 10% of users first? I want to think through risks before we commit to a timeline.",
+    "should_trigger": true,
+    "reason": "Risk assessment and failure planning"
+  },
+  {
+    "query": "I need to break down our dashboard redesign into user stories with acceptance criteria so QA knows what to test. Each story should be completable in a sprint.",
+    "should_trigger": true,
+    "reason": "Requirements breakdown into user stories"
+  },
+  {
+    "query": "The CEO wants a one-pager on our product strategy for the next 12 months. We need to show phases, dependencies between initiatives, and which features hit which quarters.",
+    "should_trigger": true,
+    "reason": "Roadmap and release planning without using the word roadmap"
+  },
+  {
+    "query": "How long do you think it would take a team of 4 engineers to build a real-time collaboration feature? I'm trying to scope it and figure out if we can ship by end of Q1.",
+    "should_trigger": true,
+    "reason": "Timeline and effort estimation"
+  },
+  {
+    "query": "I've got this feature spec from product. Can you help me write out the acceptance criteria and edge cases so our devs know exactly what done looks like?",
+    "should_trigger": true,
+    "reason": "Requirements specification into testable criteria"
+  },
+  {
+    "query": "We want to launch our mobile app in three phases: MVP with core features, then add advanced features, then optimization. What should we include in each phase?",
+    "should_trigger": true,
+    "reason": "Phased release planning"
+  },
+  {
+    "query": "I need to present to the board on why this project matters and what happens if we slip on the timeline. Can you help me put together the case?",
+    "should_trigger": true,
+    "reason": "Project planning and risk communication"
+  },
+  {
+    "query": "Can you help me organize this calendar so I can track team capacity and figure out who's available for the new project?",
+    "should_trigger": false,
+    "reason": "Resource scheduling, not product requirements or planning"
+  },
+  {
+    "query": "I need to set up CI/CD pipelines for our microservices architecture. Where should we start?",
+    "should_trigger": false,
+    "reason": "Infrastructure and deployment, not product planning"
+  },
+  {
+    "query": "How should we structure our React component library to make it more maintainable? We're thinking about atomic design patterns.",
+    "should_trigger": false,
+    "reason": "Software architecture, not product requirements"
+  },
+  {
+    "query": "Can you help me write a project charter and kick-off presentation for the stakeholders?",
+    "should_trigger": true,
+    "reason": "Project planning and stakeholder communication"
+  },
+  {
+    "query": "I'm trying to decide whether to build this in-house or buy a third-party solution. What factors should we weigh?",
+    "should_trigger": false,
+    "reason": "Make/buy decision, not product requirements definition"
+  },
+  {
+    "query": "We need to scope out a migration from our legacy system to a new platform. Can you help us break down the phases, dependencies, and what needs to happen in each stage?",
+    "should_trigger": true,
+    "reason": "Release planning and phased migration strategy"
+  },
+  {
+    "query": "I want to run a discovery session with the design team to understand user pain points. Should we do interviews, surveys, or both?",
+    "should_trigger": false,
+    "reason": "Research methodology, not product requirements documentation"
+  },
+  {
+    "query": "We're planning the next big release and need to figure out: what goes in MVP, what goes in v1.1, what's nice-to-have? Plus we need realistic timelines for each.",
+    "should_trigger": true,
+    "reason": "Release planning with phasing and timeline estimation"
+  },
+  {
+    "query": "Here's our Q3 roadmap. Can you review it for completeness and suggest what might be missing from a product planning perspective?",
+    "should_trigger": true,
+    "reason": "Roadmap review and product planning"
+  },
+  {
+    "query": "We're moving to a new office and need to figure out the floor plan, who sits where, and the budget. Can you help?",
+    "should_trigger": false,
+    "reason": "Facilities management, not product planning"
+  }
+]
